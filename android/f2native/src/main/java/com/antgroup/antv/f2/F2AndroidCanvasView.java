@@ -54,6 +54,9 @@ public class F2AndroidCanvasView extends View implements F2BaseCanvasView {
     }
 
     public F2AndroidCanvasView(Context context, AttributeSet attrs, F2CanvasView f2CanvasView) {
+        if (context == null) {
+            throw new IllegalArgumentException("Context cannot be null");
+        }
         super(context, attrs);
         this.mF2CanvasView = f2CanvasView;
         mRatio = context.getResources().getDisplayMetrics().density;
